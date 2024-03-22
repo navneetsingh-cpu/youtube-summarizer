@@ -1,10 +1,6 @@
 import streamlit as st  # Import Streamlit library for creating web apps
 import os  # Import os module for environment variables
 from openai import OpenAI  # OpenAI library for accessing GPT-3 API
-from dotenv import (
-    find_dotenv,
-    load_dotenv,
-)  # Import dotenv for loading environment variables
 import re
 
 # Import necessary classes and functions from LangChain library
@@ -23,7 +19,7 @@ with st.sidebar:
     )
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
     "[View the source code](https://github.com/navneetsingh-cpu/youtube-summarizer)"
-
+    OpenAI.api_key = openai_api_key
 
 youtube_url_pattern = re.compile(r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.be)\/.+$")
 
