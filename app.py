@@ -21,10 +21,11 @@ with st.sidebar:
     "[View the source code](https://github.com/navneetsingh-cpu/youtube-summarizer)"
     OpenAI.api_key = openai_api_key
 
-youtube_url_pattern = re.compile(r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.be)\/.+$")
-
 
 def is_valid_youtube_url(url):
+    youtube_url_pattern = re.compile(
+        r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.be)\/.+$"
+    )
     """Check if the provided URL is a valid YouTube URL."""
     return youtube_url_pattern.match(url) is not None
 
@@ -67,7 +68,7 @@ with st.form("my_form"):
                     st.write(
                         f"Found Video from {result[0].metadata['author']} that is {result[0].metadata['length']} seconds long"
                     )
-                    llm = OpenAI(temperature=0.6)
+                    llm = OpenAI(temperature=0.6, openai_api_key=openai_api_key)
                     chain = load_summarize_chain(
                         llm=llm, chain_type="stuff", verbose=True
                     )
