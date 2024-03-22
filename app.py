@@ -22,7 +22,7 @@ with st.sidebar:
         "OpenAI API Key", key="chatbot_api_key", type="password"
     )
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
-    "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
+    "[View the source code](https://github.com/navneetsingh-cpu/youtube-summarizer)"
 
 
 youtube_url_pattern = re.compile(r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.be)\/.+$")
